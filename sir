@@ -1,0 +1,25 @@
+mkdir "C:\University\Student Records"
+mkdir "C:\University\Faculty Documents"
+mkdir "C:\University\Administrative Files"
+mkdir "C:\University\Confidential Salary Records"
+mkdir "C:\University\Public Learning Materials"
+
+icacls "C:\University\Student Records" /inheritance:r
+icacls "C:\University\Student Records" /grant "Administrators":(OI)(CI)F "SYSTEM":(OI)(CI)F
+icacls "C:\University\Student Records" /grant "AuthorizedStaff":(OI)(CI)M
+icacls "C:\University\Student Records" /grant "Students":(OI)(CI)R
+
+icacls "C:\University\Faculty Documents" /inheritance:r
+icacls "C:\University\Faculty Documents" /grant "Administrators":(OI)(CI)F "SYSTEM":(OI)(CI)F
+icacls "C:\University\Faculty Documents" /grant "Faculty":(OI)(CI)M
+
+icacls "C:\University\Administrative Files" /inheritance:r
+icacls "C:\University\Administrative Files" /grant "Administrators":(OI)(CI)F "SYSTEM":(OI)(CI)F
+
+icacls "C:\University\Confidential Salary Records" /inheritance:r
+icacls "C:\University\Confidential Salary Records" /grant "Administrators":(OI)(CI)F "SYSTEM":(OI)(CI)F
+icacls "C:\University\Confidential Salary Records" /grant "HR_Payroll":(OI)(CI)M
+
+icacls "C:\University\Public Learning Materials" /inheritance:r
+icacls "C:\University\Public Learning Materials" /grant "Administrators":(OI)(CI)F "SYSTEM":(OI)(CI)F
+icacls "C:\University\Public Learning Materials" /grant "Students":(OI)(CI)R "Faculty":(OI)(CI)R
